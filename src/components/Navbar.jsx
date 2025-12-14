@@ -16,7 +16,7 @@ export default function Navbar(){
                 </div>
                 <div className="hidden md:flex w-full bg-green-pirmary outline-none rounded-full  items-center px-5">
                     <i className="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" className="w-full p-5 outline-none" />
+                    <input type="text" className="w-full p-5 outline-none" placeholder="Search for product" />
                 </div>
                 <div className="flex gap-2 items-center text-2xl">
                     <button><i className="fa-regular fa-heart"></i></button>
@@ -26,7 +26,7 @@ export default function Navbar(){
             </div>
             <div className="md:hidden w-full bg-green-pirmary outline-none rounded-full flex items-center px-5">
                     <i className="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" className="w-full p-5 outline-none" />
+                    <input type="text" className="w-full p-5 outline-none" placeholder="Search for product" />
                 </div>
         </div>
         {hambergMenu && <Hambergmenu setHambergMenu={setHambergMenu}/>}
