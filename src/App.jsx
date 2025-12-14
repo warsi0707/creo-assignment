@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router"
-import Navbar from "./components/Navbar"
-import Home from "./pages/Home"
-import Footer from "./components/Footer"
-import ProductDetails from "./pages/ProductDetails"
+import { lazy } from "react"
+
+const Navbar = lazy(()=> import("./components/Navbar"))
+const Home = lazy(()=> import("./pages/Home"))
+const Footer = lazy(()=> import("./components/Footer"))
+const ProductDetails = lazy(()=> import("./pages/ProductDetails"))
 
 function App() {
 
