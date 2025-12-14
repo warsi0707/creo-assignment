@@ -3,7 +3,7 @@ import { Link } from "react-router"
 
 function ProductCard({img}){
     return (
-        <Link to={""} className="w-60 rounded-2xl border border-gray-300 shadow-lg relative">
+        <Link to={"/product"} className="w-60 rounded-2xl border border-gray-300 shadow-lg relative">
             <button className="absolute left-5 top-2 text-2xl text-green-secondary"><i className="fa-regular fa-heart"></i></button>
             <img src={img} alt="" className="h-52 rounded-t-2xl" />
            <div className="p-2 flex flex-col  justify-between space-y-2">

@@ -3,15 +3,23 @@ import { Link } from "react-router"
 
 export default function ProductDetails(){
     const [count, setCount] = useState(1)
+    const [activeImage, setActiveImage] = useState("/12.png")
     return(
         <div className="w-full min-h-screen pb-32">
             <div className="w-full min-h-screen flex flex-col md:grid grid-cols-7 p-5 md:px-20 gap-5 py-5">
             <div className="w-full col-span-3 h-full space-y-5">
-                <img src="/5.png" alt="" className="h-96" />
+                <img src={activeImage} alt="" className="h-96 w-full" />
                 <div className="flex justify-between gap-1 overflow-hidden scroll-mx-10">
-                    <img src="/5.png" alt="" className="h-32 w-40" />
-                    <img src="/5.png" alt="" className="h-32 w-40" />
-                    <img src="/5.png" alt="" className="h-32 w-40" />
+                    <button onClick={()=> setActiveImage("/12.png")} className={`cursor-pointer   ${activeImage ==="/12.png" && "border-4 border-green-secondary"}`}>
+                        <img src="/12.png" alt="" className="h-32 w-40" />
+                    </button>
+                    <button  onClick={()=> setActiveImage("/11.png")} className={`cursor-pointer  ${activeImage ==="/11.png" && "border-4 border-green-secondary"}`}>
+                        <img src="/11.png" alt="" className="h-32 w-40" />
+                    </button>
+                    <button  onClick={()=> setActiveImage("/10.png")} className={`cursor-pointer ${activeImage ==="/10.png" && "border-4  border-green-secondary"}`}>
+                        <img src="/10.png" alt="" className="h-32 w-40" />
+                    </button>
+                    
                 </div>
             </div>
             <div className="w-full col-span-4 h-full p-3 space-y-5 ">
@@ -29,15 +37,15 @@ export default function ProductDetails(){
                 </div>
                 <div className="flex gap-5">
                     <div className="border flex w-32 items-center justify-between p-">
-                        <button onClick={()=> setCount(prev=> prev-1)} className="border-r p-2 cursor-pointer"><i className="fa-solid fa-minus"></i></button>
+                        <button onClick={()=> setCount(prev=> prev-1)} className="border-r p-2 cursor-pointer hover:bg-green-pirmary bg-green-secondary"><i className="fa-solid fa-minus"></i></button>
                         <p>{count}</p>
-                        <button onClick={()=> setCount(prev=> prev+1)} className="border-l p-2 cursor-pointer"><i className="fa-solid fa-plus"></i></button>
+                        <button onClick={()=> setCount(prev=> prev+1)} className="border-l p-2 cursor-pointer hover:bg-green-pirmary bg-green-secondary"><i className="fa-solid fa-plus"></i></button>
                     </div>
                     <button  className="bg-gray-primary text-white px-3 cursor-pointer">ADD TO CART</button>
                 </div>
             </div>
             </div>
-            <div className="w-full md:px-20 min-h-screen space-y-5 pb-10">
+            <div className="w-full md:px-20 min-h-screen px-5 space-y-5 pb-10">
                 <div className="flex justify-center items-center border-gray-400 border-t border-b ">
                     <p className="border-t-2 border-b-2 border-green-secondary text-green-secondary p-3">Description</p>
                 </div>
@@ -82,7 +90,7 @@ export default function ProductDetails(){
                         <p>Bring happiness to your daily routine with the Mesh Pouch – Buttercup Yellow. It’s cute, compact, and the perfect “little thing” to make life brighter.</p>
                 </div>
             </div>
-            <div className="border-t border-b w-full flex justify-center md:px-20">
+            <div className="border-t border-b w-full flex px-5 justify-center md:px-20">
                <div className="flex  justify-end border-r p-5">
                  <Link to={""} className="flex items-center gap-3">
                  <div className="bg-gray-primary text-white p-3 px-4 rounded-full">
